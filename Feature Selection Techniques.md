@@ -21,7 +21,7 @@ data = pd.read_csv('dataset.csv')
 
 correlation_matrix = data.corr()
 
-# Set a threshold to identify highly correlated features
+#Set a threshold to identify highly correlated features
 
 high_corr_features = [col for col in correlation_matrix.columns if any(correlation_matrix[col] > 0.8)]
 
@@ -34,11 +34,11 @@ X, y = data.drop(columns=['Loan_Approval']), data['Loan_Approval']
 
 y_encoded = LabelEncoder().fit_transform(y)
 
-# Perform Chi-square test
+#Perform Chi-square test
 
 chi2_scores, _ = chi2(X, y_encoded)
 
-# For ANOVA with continuous targets
+#For ANOVA with continuous targets
 
 f_scores, _ = f_classif(X, y_encoded)
 
@@ -49,9 +49,9 @@ f_scores, _ = f_classif(X, y_encoded)
 
 mutual_info = mutual_info_classif(X, y_encoded)
 
-# For regression
+#For regression
 
-# mutual_info = mutual_info_regression(X, y)
+#mutual_info = mutual_info_regression(X, y)
 
 
 # 4. 𝗩𝗮𝗿𝗶𝗮𝗻𝗰𝗲 𝗧𝗵𝗿𝗲𝘀𝗵𝗼𝗹𝗱
